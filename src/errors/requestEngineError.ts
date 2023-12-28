@@ -1,5 +1,5 @@
-import type { RequestEngineResponse } from 'interfaces/requestEngine';
-import type { RequestConfig } from 'interfaces/requestConfig';
+import type { RequestConfig } from '../interfaces/requestConfig.ts';
+import type { RequestEngineResponse } from '../interfaces/requestEngine.ts';
 
 export class RequestEngineError extends Error {
   constructor(

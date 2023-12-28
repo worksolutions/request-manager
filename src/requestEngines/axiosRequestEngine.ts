@@ -1,11 +1,10 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
-import type { RequestEngine, RequestEngineResponse } from 'interfaces/requestEngine';
-import type { RequestConfig } from 'interfaces/requestConfig';
+import type { RequestEngine, RequestEngineResponse } from '../interfaces/requestEngine.ts';
+import type { RequestConfig } from '../interfaces/requestConfig.ts';
 
-import { RequestEngineError } from 'errors/requestEngineError';
-
-import { getErrorMessage } from 'lib';
+import { RequestEngineError } from '../errors/requestEngineError.ts';
+import { getErrorMessage } from '../lib.ts';
 
 export class AxiosRequestEngine implements RequestEngine {
   constructor(private _baseURL: string = '') {}

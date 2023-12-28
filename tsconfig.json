@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "baseUrl": "./src",
     "useDefineForClassFields": true,
     "module": "esnext",
     "lib": [
