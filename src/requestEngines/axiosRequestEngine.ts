@@ -29,8 +29,8 @@ export class AxiosRequestEngine implements RequestEngine {
       return response;
     } catch (error) {
       if ((error as AxiosError).isAxiosError) {
-        const { message, code, request, status } = error as AxiosError;
-        throw new RequestEngineError(message, requestConfig, code, request, response, status);
+        const { message, code, request } = error as AxiosError;
+        throw new RequestEngineError(message, code, requestConfig, request, response);
       } else {
         throw new RequestEngineError(getErrorMessage(error));
       }

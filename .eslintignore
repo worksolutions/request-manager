@@ -1,0 +1,4 @@
+.idea
+node_modules/*
+src/vite-env.d.ts
+jest.config.ts

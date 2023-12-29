@@ -10,7 +10,7 @@ export function getErrorMessage(error: unknown): string {
   if (isErrorWithMessage(error)) return error.message;
 
   try {
-    return JSON.stringify(error);
+    return JSON.stringify(error, null, 2);
   } catch {
     return String(error);
   }

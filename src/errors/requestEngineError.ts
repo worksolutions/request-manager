@@ -4,12 +4,15 @@ import type { RequestEngineResponse } from '../interfaces/requestEngine.ts';
 export class RequestEngineError extends Error {
   constructor(
     message?: string,
-    public readonly config?: RequestConfig,
     public readonly code?: string,
+    public readonly config?: RequestConfig,
     public readonly request?: any,
-    public readonly response?: RequestEngineResponse,
-    public readonly status?: number
+    public readonly response?: RequestEngineResponse
   ) {
     super(message);
+  }
+
+  public get status(): number | undefined {
+    return this.response?.status;
   }
 }
