@@ -8,14 +8,22 @@ interface MiddlewareRouteConfig {
   methods?: Method[];
 }
 
-export interface MiddlewareConfig<T extends RequestConfig | RequestEngineResponse | RequestEngineError> {
+type Middleware<T extends RequestConfig | RequestEngineResponse | RequestEngineError> = (
+  payload: T,
+  breakFn: () => void
+) => void | Promise<void>;
+
+interface MiddlewareConfig<M> {
   apply: MiddlewareRouteConfig;
   exclude?: MiddlewareRouteConfig;
-  middleware: (payload: T, breakFn: () => void) => void | Promise<void>;
+  middleware: M;
 }
 
-export type RequestMiddlewareConfig = MiddlewareConfig<RequestConfig>;
+export type RequestMiddleware = Middleware<RequestConfig>;
+export type RequestMiddlewareConfig = MiddlewareConfig<RequestMiddleware>;
 
-export type ResponseMiddlewareConfig = MiddlewareConfig<RequestEngineResponse>;
+export type ResponseMiddleware = Middleware<RequestEngineResponse>;
+export type ResponseMiddlewareConfig = MiddlewareConfig<ResponseMiddleware>;
 
-export type ErrorMiddlewareConfig = MiddlewareConfig<RequestEngineError>;
+export type ErrorMiddleware = Middleware<RequestEngineError>;
+export type ErrorMiddlewareConfig = MiddlewareConfig<ErrorMiddleware>;

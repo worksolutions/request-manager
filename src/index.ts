@@ -6,7 +6,7 @@ export { RequestEngineError } from './errors/requestEngineError';
 export type { RequestEngine, RequestEngineResponse } from './interfaces/requestEngine';
 export type { DataDecoder } from './interfaces/dataDecoder';
 export type { RequestConfig, Method, ContentType, ResponseType, ResponseEncoding } from './interfaces/requestConfig';
-export type { RequestMiddlewareConfig, ResponseMiddlewareConfig, ErrorMiddlewareConfig } from './interfaces/middleware';
+export type { RequestMiddleware, ResponseMiddleware, ErrorMiddleware } from './interfaces/middleware';
 
 export { AxiosRequestEngine } from './requestEngines/axiosRequestEngine';
 
