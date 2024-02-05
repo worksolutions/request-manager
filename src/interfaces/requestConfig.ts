@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+
 type MaxUploadRate = number;
 
 type MaxDownloadRate = number;
@@ -110,6 +112,7 @@ export interface RequestConfig {
   // };
   // formSerializer?: FormSerializerOptions;
   // family?: 4 | 6 | undefined;
-  // lookup?: ((hostname: string, options: object, cb: (err: Error | null, address: string, family: number) => void) => void) |
-  //     ((hostname: string, options: object) => Promise<[address: string, family: number] | string>);
+  // lookup?:
+  //   | ((hostname: string, options: object, cb: (err: Error | null, address: string, family: number) => void) => void)
+  //   | ((hostname: string, options: object) => Promise<[address: string, family: number] | string>);
 }
