@@ -1,4 +1,4 @@
-import { getErrorMessage } from '../src/lib.ts';
+import { getErrorMessage } from '../src/lib';
 
 describe('getErrorMessage', function () {
   it('should receive a message like string', () => {

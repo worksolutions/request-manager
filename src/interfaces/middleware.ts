@@ -1,7 +1,7 @@
-import { RequestEngineError } from '../errors/requestEngineError.ts';
+import { RequestEngineError } from '../errors/requestEngineError';
 
-import { Method, RequestConfig } from './requestConfig.ts';
-import { RequestEngineResponse } from './requestEngine.ts';
+import { Method, RequestConfig } from './requestConfig';
+import { RequestEngineResponse } from './requestEngine';
 
 interface MiddlewareRouteConfig {
   path: string;

@@ -1,5 +1,5 @@
-import type { RequestConfig } from '../interfaces/requestConfig.ts';
-import type { RequestEngineResponse } from '../interfaces/requestEngine.ts';
+import type { RequestConfig } from '../interfaces/requestConfig';
+import type { RequestEngineResponse } from '../interfaces/requestEngine';
 
 export class RequestEngineError extends Error {
   public readonly name: 'RequestEngineError' = 'RequestEngineError' as const;

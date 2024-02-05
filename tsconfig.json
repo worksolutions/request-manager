@@ -1,26 +1,35 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "useDefineForClassFields": true,
-    "module": "esnext",
+    "target": "ESNext",
     "lib": [
       "esnext"
     ],
+    "baseUrl": "./src",
+    "rootDir": "src",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "allowJs": false,
     "skipLibCheck": true,
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "allowSyntheticDefaultImports": true,
-    "allowJs": false
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "declaration": true,
+    "outDir": "dist",
+    "emitDeclarationOnly": true,
+    "noEmitOnError": true
   },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
   "include": [
     "src"
   ]

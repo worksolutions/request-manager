@@ -1,12 +1,12 @@
-import { RequestEngineError } from './errors/requestEngineError.ts';
-import { DecoderError } from './errors/decoderError.ts';
+import { RequestEngineError } from './errors/requestEngineError';
+import { DecoderError } from './errors/decoderError';
 
-import type { DataDecoder } from './interfaces/dataDecoder.ts';
-import { Method, RequestConfig } from './interfaces/requestConfig.ts';
-import { RequestEngine } from './interfaces/requestEngine.ts';
-import { ErrorMiddlewareConfig, RequestMiddlewareConfig, ResponseMiddlewareConfig } from './interfaces/middleware.ts';
+import type { DataDecoder } from './interfaces/dataDecoder';
+import { Method, RequestConfig } from './interfaces/requestConfig';
+import { RequestEngine } from './interfaces/requestEngine';
+import { ErrorMiddlewareConfig, RequestMiddlewareConfig, ResponseMiddlewareConfig } from './interfaces/middleware';
 
-import { getErrorMessage } from './lib.ts';
+import { getErrorMessage } from './lib';
 
 export class RequestManager {
   public readonly requestMiddlewares: RequestMiddlewareConfig[] = [];

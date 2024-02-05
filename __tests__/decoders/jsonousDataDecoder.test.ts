@@ -1,6 +1,6 @@
 import { array, boolean, field, number, string, succeed } from 'jsonous';
 
-import { JsonousDataDecoder } from '../../src/decoders/jsonousDataDecoder.ts';
+import { JsonousDataDecoder } from '../../src/decoders/jsonousDataDecoder';
 
 describe('JsonousDataDecoder', function () {
   const testString = 'foo';

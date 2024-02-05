@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/naming-convention */
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
-import { RequestEngineError } from '../errors/requestEngineError.ts';
+import { RequestEngineError } from '../errors/requestEngineError';
 
-import type { RequestEngine, RequestEngineResponse } from '../interfaces/requestEngine.ts';
-import type { RequestConfig } from '../interfaces/requestConfig.ts';
+import type { RequestEngine, RequestEngineResponse } from '../interfaces/requestEngine';
+import type { RequestConfig } from '../interfaces/requestConfig';
 
-import { getErrorMessage } from '../lib.ts';
+import { getErrorMessage } from '../lib';
 
 export class AxiosRequestEngine implements RequestEngine {
   constructor(private _baseURL: string = '') {}

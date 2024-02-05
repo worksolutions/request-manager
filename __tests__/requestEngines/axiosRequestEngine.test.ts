@@ -1,4 +1,4 @@
-import { AxiosRequestEngine } from '../../src/requestEngines/axiosRequestEngine.ts';
+import { AxiosRequestEngine } from '../../src/requestEngines/axiosRequestEngine';
 
 describe('AxiosRequestEngine', function () {
   const axiosRequestEngine = new AxiosRequestEngine();

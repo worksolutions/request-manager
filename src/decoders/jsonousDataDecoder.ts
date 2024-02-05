@@ -1,10 +1,10 @@
 import Decoder from 'jsonous';
 
-import type { DataDecoder } from '../interfaces/dataDecoder.ts';
+import type { DataDecoder } from '../interfaces/dataDecoder';
 
-import { DecoderError } from '../errors/decoderError.ts';
+import { DecoderError } from '../errors/decoderError';
 
-import { getErrorMessage } from '../lib.ts';
+import { getErrorMessage } from '../lib';
 
 export class JsonousDataDecoder<T> implements DataDecoder<T> {
   constructor(private readonly _decoder: Decoder<T>) {}
