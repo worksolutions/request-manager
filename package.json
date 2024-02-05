@@ -1,12 +1,12 @@
 {
   "name": "request-manager",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
-  "license": "MIT",
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "author": "Gevorg Danelyan",
+  "license": "MIT",
   "exports": {
     ".": {
       "import": "./dist/index.js",
