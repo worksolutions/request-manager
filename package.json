@@ -1,5 +1,5 @@
 {
-  "name": "request-manager",
+  "name": "@worksolutions/request-manager",
   "version": "0.0.1",
   "type": "module",
   "author": "Gevorg Danelyan",
