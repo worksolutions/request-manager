@@ -1,6 +1,6 @@
-import { RequestEngineError } from '../../errors/requestEngineError.ts';
-import { RequestConfig } from '../../interfaces/requestConfig.ts';
-import { RequestEngineResponse } from '../../interfaces/requestEngine.ts';
+import { RequestEngineError } from '../../src/errors/requestEngineError.ts';
+import { RequestConfig } from '../../src/interfaces/requestConfig.ts';
+import { RequestEngineResponse } from '../../src/interfaces/requestEngine.ts';
 
 describe('RequestEngineError', function () {
   it('should create an RequestEngineError with message, config, code, request, response, stack and isAxiosError', function () {

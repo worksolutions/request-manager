@@ -1,8 +1,8 @@
 import { field, string, succeed } from 'jsonous';
 
-import { JsonousDataDecoder } from '../../decoders/jsonousDataDecoder.ts';
-import { DecoderError } from '../../errors/decoderError.ts';
-import { getErrorMessage } from '../../lib.ts';
+import { JsonousDataDecoder } from '../../src/decoders/jsonousDataDecoder.ts';
+import { DecoderError } from '../../src/errors/decoderError.ts';
+import { getErrorMessage } from '../../src/lib.ts';
 
 describe('DecoderError', function () {
   it('should create an DecoderError with jsonous message', async function () {
