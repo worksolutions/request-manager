@@ -1,14 +1,16 @@
 import Decoder from 'jsonous';
 
 import type { DataDecoder } from '../interfaces/dataDecoder.ts';
+
 import { DecoderError } from '../errors/decoderError.ts';
+
 import { getErrorMessage } from '../lib.ts';
 
 export class JsonousDataDecoder<T> implements DataDecoder<T> {
-  constructor(private readonly decoder: Decoder<T>) {}
+  constructor(private readonly _decoder: Decoder<T>) {}
 
   public async decode(raw: unknown): Promise<T> {
-    const [data, error] = this.decoder.decodeAny(raw).cata<[T, null] | [null, string]>({
+    const [data, error] = this._decoder.decodeAny(raw).cata<[T, null] | [null, string]>({
       Ok: (val) => [val, null],
       Err: (err) => [null, err],
     });

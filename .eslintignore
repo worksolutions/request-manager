@@ -1,4 +1,5 @@
 .idea
 node_modules/*
 src/vite-env.d.ts
+src/__tests__
 jest.config.ts
