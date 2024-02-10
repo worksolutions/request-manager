@@ -1,36 +1,30 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "lib": [
-      "esnext"
-    ],
-    "baseUrl": "./src",
-    "rootDir": "src",
-    "module": "ESNext",
+    "module": "commonjs",
     "moduleResolution": "node",
-    "typeRoots": [
-      "./node_modules/@types"
+    "target": "es2018",
+    "lib": [
+      "es2018"
     ],
-    "allowJs": false,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "outDir": "dist/node",
+    "rootDirs": [
+      "./src"
+    ],
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "declaration": true,
-    "outDir": "dist",
-    "emitDeclarationOnly": true,
-    "noEmitOnError": true
+    "sourceMap": true,
+    "inlineSources": true,
+    "removeComments": false,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
   "include": [
     "src"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "__tests__/**"
   ]
 }

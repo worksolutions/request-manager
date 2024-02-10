@@ -3,19 +3,15 @@ import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 import { RequestEngineError } from '../errors/requestEngineError';
 
-import type { RequestEngine, RequestEngineResponse } from '../interfaces/requestEngine';
+import type { RequestEngineResponse } from '../interfaces/requestEngine';
 import type { RequestConfig } from '../interfaces/requestConfig';
 
 import { getErrorMessage } from '../lib';
 
-export class AxiosRequestEngine implements RequestEngine {
-  constructor(private _baseURL: string = '') {}
+import { RequestEngine } from './requestEngine';
 
-  public set baseURL(url: string) {
-    this._baseURL = url;
-  }
-
-  public async makeRequest(requestConfig: RequestConfig): Promise<RequestEngineResponse> {
+export class AxiosRequestEngine extends RequestEngine {
+  public async _makeRequest(requestConfig: RequestConfig): Promise<RequestEngineResponse> {
     let response: RequestEngineResponse | undefined = undefined;
 
     try {
@@ -25,13 +21,16 @@ export class AxiosRequestEngine implements RequestEngine {
         headers,
         status,
         statusText,
-      }: AxiosResponse<unknown, unknown> = await axios(this._convertRequestConfigToAxiosRequestConfig(requestConfig));
+      }: AxiosResponse<unknown, unknown> = await axios<unknown>(
+        this._convertRequestConfigToAxiosRequestConfig(requestConfig)
+      );
 
       response = { data, config: requestConfig, status, statusText, headers, request };
       return response;
     } catch (error) {
       if ((error as AxiosError).isAxiosError) {
-        const { message, code, request } = error as AxiosError;
+        const { message, code, request, response: errorBody } = error as AxiosError;
+        console.error(`Backend returned code ${code}, body was: `, errorBody);
         throw new RequestEngineError(message, code, requestConfig, request, response);
       } else {
         throw new RequestEngineError(getErrorMessage(error));

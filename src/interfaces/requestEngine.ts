@@ -8,9 +8,3 @@ export interface RequestEngineResponse {
   headers: Record<string, any>;
   request?: any;
 }
-
-export interface RequestEngine {
-  makeRequest: (requestConfig: RequestConfig) => Promise<RequestEngineResponse>;
-
-  set baseURL(url: string);
-}

@@ -1,29 +1,16 @@
-import { RequestEngineError } from '../errors/requestEngineError';
+import { RequestMiddleware } from '../middlewares/requestMiddleware';
+import { ResponseMiddleware } from '../middlewares/responseMiddleware';
+import { ErrorMiddleware } from '../middlewares/errorMiddleware';
 
-import { Method, RequestConfig } from './requestConfig';
-import { RequestEngineResponse } from './requestEngine';
+import { Method } from './requestConfig';
 
-interface MiddlewareRouteConfig {
+export interface MiddlewareRouteConfig {
   path: string;
   methods?: Method[];
 }
 
-type Middleware<T extends RequestConfig | RequestEngineResponse | RequestEngineError> = (
-  payload: T,
-  breakFn: () => void
-) => void | Promise<void>;
-
-interface MiddlewareConfig<M> {
+export interface MiddlewareConfig<M extends RequestMiddleware | ResponseMiddleware | ErrorMiddleware> {
   apply: MiddlewareRouteConfig;
   exclude?: MiddlewareRouteConfig;
   middleware: M;
 }
-
-export type RequestMiddleware = Middleware<RequestConfig>;
-export type RequestMiddlewareConfig = MiddlewareConfig<RequestMiddleware>;
-
-export type ResponseMiddleware = Middleware<RequestEngineResponse>;
-export type ResponseMiddlewareConfig = MiddlewareConfig<ResponseMiddleware>;
-
-export type ErrorMiddleware = Middleware<RequestEngineError>;
-export type ErrorMiddlewareConfig = MiddlewareConfig<ErrorMiddleware>;

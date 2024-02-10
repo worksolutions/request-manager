@@ -3,6 +3,8 @@ export class DecoderError extends Error {
 
   constructor(message?: string) {
     super(`Response parsing error: ${message}`);
+
+    Object.setPrototypeOf(this, DecoderError.prototype);
   }
 
   public static isDecoderError(e: unknown): e is DecoderError {

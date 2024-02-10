@@ -13,6 +13,8 @@ export class RequestEngineError extends Error {
     public readonly response?: RequestEngineResponse
   ) {
     super(message);
+
+    Object.setPrototypeOf(this, RequestEngineError.prototype);
   }
 
   public get status(): number | undefined {

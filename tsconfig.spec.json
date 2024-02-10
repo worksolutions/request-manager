@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDirs": ["./src", "./__tests__"],
+    "strict": false,
+    "strictPropertyInitialization": false,
+    "sourceMap": false,
+    "removeComments": true,
+    "noImplicitAny": false,
+  },
+  "exclude": ["node_modules"]
+}
